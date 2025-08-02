@@ -30,7 +30,6 @@ class HeadlineSorter:
             if len(sources) > 1:
                 filtered_clusters[str(cluster_id)] = group
 
-                # Summary keyword extraction
                 titles = [item["title"] for item in group]
                 entities = []
                 for title in titles:
