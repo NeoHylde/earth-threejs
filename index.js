@@ -112,8 +112,8 @@ scene.add(sunLight);
 function animate() {
   requestAnimationFrame(animate);
 
-  earthGroup.rotation.y += 0.0005/2;
-  cloudsMesh.rotation.y += 0.00115 / 4;
+  earthGroup.rotation.y += 0.0005;
+  cloudsMesh.rotation.y += 0.00115 / 2;
   renderer.render(scene, camera);
 }
 
