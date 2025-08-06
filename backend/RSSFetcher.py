@@ -22,7 +22,7 @@ class ArticleFetcher:
         data = []
 
         for i, item in enumerate(items):
-            if i >= 30:
+            if i >= 40:
                 break
 
             title = item.find('title').text if item.find('title') is not None else ""
