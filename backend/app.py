@@ -8,11 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 NEWS_SOURCES = {
-            "bbc": "https://feeds.bbci.co.uk/news/rss.xml",
-            "cnn": "http://rss.cnn.com/rss/cnn_topstories.rss",
-            "fox": "http://feeds.foxnews.com/foxnews/latest",
-            "pbs": "https://www.pbs.org/newshour/feeds/rss/headlines",
-            "the-guardian": "https://www.theguardian.com/us/rss"
+            
         }
 
 class NewsAggregator():
@@ -22,7 +18,8 @@ class NewsAggregator():
         self.sources = { 
             "twz" : "https://www.twz.com/feed",
             "wot" : "https://warontherocks.libsyn.com/rss",
-            "lwj" : "https://www.longwarjournal.org/feed"
+            "lwj" : "https://www.longwarjournal.org/feed",
+            "isw" : "https://www.understandingwar.org/feeds-publications.xml",
         } 
         
 
