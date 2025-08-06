@@ -1,51 +1,29 @@
-from sentence_transformers import SentenceTransformer
-from sklearn.cluster import DBSCAN
-from sklearn.metrics.pairwise import cosine_distances
+from collections import defaultdict, Counter
 import spacy
-from collections import Counter
 import json
 
 class HeadlineSorter:
     def __init__(self):
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
         self.nlp = spacy.load("en_core_web_sm")
 
     def topic_clustering(self, data):
-        headlines = [item["title"] for item in data]
-        embeddings = self.model.encode(headlines)
+        country_clusters = defaultdict(list)
 
-        clustering = DBSCAN(eps=0.5, min_samples=2, metric='cosine').fit(embeddings)
+        for item in data:
+            title = item["title"]
+            doc = self.nlp(title)
 
-        clustered = {}
-        for i, label in enumerate(clustering.labels_):
-            if label == -1:
-                continue
-            clustered.setdefault(label, []).append(data[i])
+            entities = [ent.text.lower() for ent in doc.ents if ent.label_ in {"GPE", "NORP"}]
 
-        filtered_clusters = {}
-        cluster_summaries = {}
+            if entities:
+                main_entity = Counter(entities).most_common(1)[0][0]
+            else:
+                main_entity = "unknown"
 
-        for cluster_id, group in clustered.items():
-            sources = {item["source"] for item in group}
-            if len(sources) > 1:
-                filtered_clusters[str(cluster_id)] = group
-
-                titles = [item["title"] for item in group]
-                entities = []
-                for title in titles:
-                    doc = self.nlp(title)
-                    for ent in doc.ents:
-                        entities.append(ent.text.lower())
-                if entities:
-                    most_common_entity = Counter(entities).most_common(1)[0][0]
-                else:
-                    most_common_entity = "unknown"
-
-                cluster_summaries[str(cluster_id)] = most_common_entity
+            country_clusters[main_entity].append(item)
 
         output = {
-            "clusters": filtered_clusters,
-            "summaries": cluster_summaries
+            "clusters": country_clusters,
         }
 
         return output
