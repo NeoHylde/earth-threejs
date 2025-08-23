@@ -45,7 +45,7 @@ with app.app_context():
     print("initializing...")
     clusterer = NewsAggregator()
 
-@app.route("/clusters")
+@app.route("/clusters", method=['GET'])
 def get_clusters():
     clusters = clusterer.sort_headlines()
     return jsonify(clusters) 
