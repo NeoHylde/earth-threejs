@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const TempDisplay: React.FC = () => {
+const TempDisplay = () => {
   const [data, setData] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -18,8 +18,8 @@ const TempDisplay: React.FC = () => {
     fetchData();
   }, []);
 
-  if (error) return <h1>Error: {error}</h1>;
-  return <h1 className="bg-white">{data ?? "Loading..."}</h1>;
+  if (error) return error;
+  return data ?? "Loading...";
 };
 
 export default TempDisplay;
