@@ -2,13 +2,10 @@ from RSSFetcher import ArticleFetcher
 from TopicClustering import HeadlineSorter
 import json
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-
-NEWS_SOURCES = {
-            
-        }
 
 class NewsAggregator():
     def __init__(self):
@@ -20,7 +17,6 @@ class NewsAggregator():
             "lwj" : "https://www.longwarjournal.org/feed",
             "isw" : "https://www.understandingwar.org/feeds-publications.xml",
         } 
-        
 
     def fetch_all_feeds(self):
         for name, url in self.sources.items():
