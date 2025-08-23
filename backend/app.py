@@ -45,7 +45,12 @@ with app.app_context():
     print("initializing...")
     clusterer = NewsAggregator()
 
-@app.route("/clusters", method=['GET'])
+@app.route("/clusters", methods=['GET'])
 def get_clusters():
     clusters = clusterer.sort_headlines()
-    return jsonify(clusters) 
+    return jsonify({"items": clusters})
+
+@app.route("/hello")
+def hello():
+    return "Hello from Flask", 200
+
