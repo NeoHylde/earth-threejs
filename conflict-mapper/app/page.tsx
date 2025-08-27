@@ -2,13 +2,15 @@
 import * as THREE from "three"
 import Image from "next/image";
 import { Canvas } from "@react-three/fiber";
-import { div } from "three/tsl";
 
 import EarthMesh from "./components/EarthMesh";
 import Starfield from "./components/Starfield";
 import RSSPipeline from "./components/RSSPipeline";
 
 export default function Home() {
+  const clusters = RSSPipeline();
+
+
   return (
     <div className="flex flex-col h-screen w-screen">
       <div className="flex-1"> 
@@ -21,7 +23,9 @@ export default function Home() {
           <Starfield />
         </Canvas>
       </div>
-      <p className="bg-white">{RSSPipeline()}</p>
+      {clusters && (
+        <pre className="bg-white text-xs">{JSON.stringify(clusters, null, 2)}</pre>
+      )}
     </div>
   );
 }

@@ -2,7 +2,7 @@
 import React from "react";
 import * as THREE from "three"
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { DragControls, OrbitControls } from "@react-three/drei";
 import { Mesh } from "three";
 import PinMesh from "./PinMesh";
 import { degToRad } from "three/src/math/MathUtils.js";
@@ -26,6 +26,7 @@ export default function EarthMesh() {
     const vanPin = latLonToCartesian(49.28, -123.12);
     const copPin = latLonToCartesian(55.67, 12.57);
     const zeroPin = latLonToCartesian(0,0);
+    const ukrPin = latLonToCartesian(48.38, 31.17);
 
     useFrame((_, delta) => {
     earthGroupRef.current.rotation.y += SPIN_RATE * delta;
@@ -41,6 +42,7 @@ export default function EarthMesh() {
                 <PinMesh position={vanPin} />
                 <PinMesh position={copPin} />
                 <PinMesh position={zeroPin} />
+                <PinMesh position={ukrPin} />
             </group>
     );
 };
