@@ -1,0 +1,102 @@
+{
+    "afghanistan": {
+        "latitude": 33.9391,
+        "longitude": 67.71
+    },
+    "albania": {
+        "latitude": 41.1533,
+        "longitude": 20.1683
+    },
+    "algeria": {
+        "latitude": 28.0339,
+        "longitude": 1.6596
+    },
+    "andorra": {
+        "latitude": 42.5063,
+        "longitude": 1.5218
+    },
+    "angola": {
+        "latitude": -11.2027,
+        "longitude": 17.8739
+    },
+    "argentina": {
+        "latitude": -38.4161,
+        "longitude": -63.6167
+    },
+    "armenia": {
+        "latitude": 40.0691,
+        "longitude": 45.0382
+    },
+    "australia": {
+        "latitude": -25.2744,
+        "longitude": 133.7751
+    },
+    "austria": {
+        "latitude": 47.5162,
+        "longitude": 14.5501
+    },
+    "azerbaijan": {
+        "latitude": 40.1431,
+        "longitude": 47.5769
+    },
+    "bangladesh": {
+        "latitude": 23.685,
+        "longitude": 90.3563
+    },
+    "belgium": {
+        "latitude": 50.5039,
+        "longitude": 4.4699
+    },
+    "brazil": {
+        "latitude": -14.235,
+        "longitude": -51.9253
+    },
+    "canada": {
+        "latitude": 56.1304,
+        "longitude": -106.3468
+    },
+    "china": {
+        "latitude": 35.8617,
+        "longitude": 104.1954
+    },
+    "france": {
+        "latitude": 46.6034,
+        "longitude": 1.8883
+    },
+    "germany": {
+        "latitude": 51.1657,
+        "longitude": 10.4515
+    },
+    "india": {
+        "latitude": 20.5937,
+        "longitude": 78.9629
+    },
+    "italy": {
+        "latitude": 41.8719,
+        "longitude": 12.5674
+    },
+    "japan": {
+        "latitude": 36.2048,
+        "longitude": 138.2529
+    },
+    "mexico": {
+        "latitude": 23.6345,
+        "longitude": -102.5528
+    },
+    "russia": {
+        "latitude": 61.524,
+        "longitude": 105.3188
+    },
+    "south africa": {
+        "latitude": -30.5595,
+        "longitude": 22.9375
+    },
+    "united kingdom": {
+        "latitude": 55.3781,
+        "longitude": -3.436
+    },
+    "united states": {
+        "latitude": 37.0902,
+        "longitude": -95.7129
+    }
+}
