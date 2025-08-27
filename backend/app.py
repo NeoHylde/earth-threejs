@@ -48,7 +48,7 @@ with app.app_context():
 @app.route("/clusters", methods=['GET'])
 def get_clusters():
     clusters = clusterer.sort_headlines()
-    return jsonify({"items": clusters})
+    return jsonify(clusters)
 
 @app.route("/hello")
 def hello():
